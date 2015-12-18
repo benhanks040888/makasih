@@ -1,2 +1,46 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+@import "fonts";
+@import "variables";
+
+// baseguide overrides
+
+$grid-flexbox: true;
+$font-family-base: $proxima;
+$headings-font-family: $dancing-script;
+$text-color: $darkblue;
+$link-color: $red;
+$link-color-hover: lighten($link-color, 10%);
+
+@import "vendors/baseguide";
+
+@import "utilities";
+@import "base";
+
+@import "components/buttons";
+@import "components/nav";
+@import "components/animation";
+
+@import "pages/home";
+
+// @import "components/dropzone";
+
+.ball-area {
+  max-width: 300px;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  right: 150px;
+}
+
+.ball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -25px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: #bada55;
+}

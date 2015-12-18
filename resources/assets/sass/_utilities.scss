@@ -1,0 +1,13 @@
+// vertical-center using table display method
+@mixin vcenter ($inner: ".vcenter") {
+  display: table;
+
+  & > #{$inner} {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+@function rem($value) {
+  @return to-rem($value);
+}

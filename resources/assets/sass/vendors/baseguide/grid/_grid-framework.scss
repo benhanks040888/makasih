@@ -1,0 +1,286 @@
+// ----------------
+// Grid Framework
+// ----------------
+
+@mixin container($gutter: $grid-gutter, $width: $grid-container) {
+	@include clearfix;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: ($gutter / 2);
+	padding-right: ($gutter / 2);
+
+	@if strip-unit($gutter) != 0 {
+		padding-left: to-rem($gutter / 2);
+		padding-right: to-rem($gutter / 2);
+	}
+
+	max-width: $width - $gutter;
+	max-width: to-rem($width - $gutter);
+}
+
+@mixin row($gutter: $grid-gutter) {
+	@include clearfix;
+	margin-left: ($gutter / -2);
+	margin-right: ($gutter / -2);
+
+	@if strip-unit($gutter) != 0 {
+		margin-left: to-rem($gutter / -2);
+		margin-right: to-rem($gutter / -2);
+	}
+
+	@if $grid-flexbox {
+		/* autoprefixer: off */
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+		&:before,
+		&:after {
+			/* autoprefixer: off */
+			-webkit-flex-basis: 0;
+			flex-basis: 0;
+			-webkit-order: 1;
+			order: 1;
+		}
+	}
+}
+
+@mixin column-base($gutter: $grid-gutter) {
+	position: relative;
+	min-height: 1px;
+	padding-left: ($gutter / 2);
+	padding-right: ($gutter / 2);
+
+	@if strip-unit($gutter) != 0 {
+		padding-left: to-rem($gutter / 2);
+		padding-right: to-rem($gutter / 2);
+	}
+
+	@if $grid-flexbox {
+		/* autoprefixer: off */
+		width: 100%;
+		min-width: 1px;
+		-webkit-flex: 0 0 auto;
+		-ms-flex: 0 0 auto;
+		flex: 0 0 auto;
+	}
+}
+
+@mixin column($size: expand, $columns: $grid-columns, $gutter: $grid-gutter) {
+	float: left;
+
+	@if (type-of($size) == 'number') {
+		width: percentage($size / $columns);
+
+		@if $grid-flexbox {
+			max-width: percentage($size / $columns);
+		}
+	} @else {
+		width: auto;
+
+		@if $grid-flexbox {
+			/* autoprefixer: off */
+
+			@if $size == shrink {
+				-webkit-flex: 0 0 auto;
+				-ms-flex: 0 0 auto;
+				flex: 0 0 auto;
+			}
+
+			@if $size == expand {
+				-webkit-flex: 1 1 auto;
+				-ms-flex: 1 1 auto;
+				flex: 1 1 auto;
+			}
+		}
+	}
+
+	@if $gutter != $grid-gutter {
+		padding-left: ($gutter / 2);
+		padding-right: ($gutter / 2);
+		
+		@if strip-unit($gutter) != 0 {
+			padding-left: to-rem($gutter / 2);
+			padding-right: to-rem($gutter / 2);
+		}
+	}
+}
+
+@mixin column-push($size, $columns: $grid-columns) {
+	@if $size > 0 {
+		left: percentage($size / $columns);
+	} @else {
+		left: auto;
+	}
+}
+
+@mixin column-pull($size, $columns: $grid-columns) {
+	@if $size > 0 {
+		right: percentage($size / $columns);
+	} @else {
+		right: auto;
+	}
+}
+
+@mixin column-offset($size, $columns: $grid-columns) {
+	margin-left: percentage($size / $columns);
+}
+
+@mixin calc-column($class, $index, $type) {
+	@if ($type == width) and ($index > 0) {
+		.col-#{$class}-#{$index} {
+			width: percentage($index / $grid-columns);
+
+			@if $grid-flexbox {
+				max-width: percentage($index / $grid-columns);
+			}
+		}
+	}
+
+	@if ($type == push) and ($index > 0) {
+		.col-#{$class}-push-#{$index} {
+			left: percentage($index / $grid-columns);
+		}
+	}
+
+	@if ($type == push) and ($index == 0) {
+		.col-#{$class}-push-0 {
+			left: auto;
+		}
+	}
+
+	@if ($type == pull) and ($index > 0) {
+		.col-#{$class}-pull-#{$index} {
+			right: percentage($index / $grid-columns);
+		}
+	}
+
+	@if ($type == pull) and ($index == 0) {
+		.col-#{$class}-pull-0 {
+			right: auto;
+		}
+	}
+
+	@if ($type == offset) {
+		.col-#{$class}-offset-#{$index} {
+			margin-left: percentage($index / $grid-columns);
+		}
+	}
+}
+
+// Create columns for a specific class
+@mixin calc-all-columns($class) {
+	@if $grid-columns-output {
+		@include float-all-columns($class);
+
+		@for $i from 0 through $grid-columns {
+			@include calc-column($class, $i, width);
+			@include calc-column($class, $i, pull);
+			@include calc-column($class, $i, push);
+			@include calc-column($class, $i, offset);
+		}
+	}
+}
+
+@mixin float-all-columns($class, $i: 1, $list: '.col-#{$class}-#{$i}') {
+	@for $i from (1 + 1) through $grid-columns {
+		$list: '#{$list}, .col-#{$class}-#{$i}';
+	}
+
+	#{$list} {
+		float: left;
+	}
+}
+
+@mixin make-columns() {
+	@if $grid-columns-output {
+		$list: ();
+
+		@each $class in $mq-breakpoints-list {
+			@for $i from 1 through $grid-columns {
+				$input: '.col-#{$class}-#{$i}';
+				$list: append($list, unquote($input), comma);
+			}
+		}
+
+		#{$list} {
+			@include column-base;
+		}
+	}
+}
+
+// Create breakpoints and responsive visibility classes
+@mixin make-breakpoints() {
+	$i: 1;
+
+	@each $class, $width in $mq-breakpoints {
+		$i: $i + 1;
+
+		@if length($mq-breakpoints-list) > 1 {
+			.visible-#{$class} {
+				display: none !important;
+			}
+		}
+
+		@if $class == nth($mq-breakpoints-list, 1) {
+			// first breakpoint
+			@include calc-all-columns($class);
+
+			@if length($mq-breakpoints-list) > 1 {
+				@include mq($until: nth($mq-breakpoints-list, $i)) {
+					.hidden-#{$class} {
+						display: none !important;
+					}
+
+					.visible-#{$class} {
+						display: block !important;
+					}
+				}
+			}
+		} @else if $class == nth($mq-breakpoints-list, length($mq-breakpoints-list)) {
+			// last breakpoint
+			@include mq($class) {
+				@include calc-all-columns($class);
+
+				.hidden-#{$class} {
+					display: none !important;
+				}
+
+				.visible-#{$class} {
+					display: block !important;
+				}
+			}
+		} @else {
+			.visible-#{$class}-up {
+				display: none !important;
+			}
+
+			@include mq($from: $class) {
+				.visible-#{$class}-up {
+					display: block !important;
+				}
+			}
+
+			@include mq($from: $class, $until: nth($mq-breakpoints-list, $i)) {
+				.visible-#{$class} {
+					display: block !important;
+				}
+
+				.hidden-#{$class} {
+					display: none !important;
+				}
+			}
+
+			@include mq($class) {
+				@include calc-all-columns($class);
+
+				.hidden-#{$class}-up {
+					display: none !important;
+				}
+			}
+		}
+	}
+}
