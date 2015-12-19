@@ -5,33 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
     <title>Index</title>
     <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/vendors/animate.css">
   </head>
   <body class="home">
+    <div class="loader">
+      <div class="vcenter">
+        <div class="spinner"><div class="cube1"></div><div class="cube2"></div></div>
+      </div>
+    </div>
     <section class="section-main">
-      <nav>
+      <nav class="wow bounceInDown">
         <a href="#home">Jemput Sekarang</a>
         <a href="#about">Tentang Kami</a>
       </nav>
 
-      <div class="clouds">
-        <img class="cloud1" src="../assets/images/cloud1.png" alt="Cloud 1">
-        <img class="cloud2" src="../assets/images/cloud2.png" alt="Cloud 2">
-        <img class="cloud3" src="../assets/images/cloud3.png" alt="Cloud 3">
-        <img class="cloud4" src="../assets/images/cloud4.png" alt="Cloud 4">
+      <div class="santa"></div>
+      <div class="deer"></div>
+      <div class="snowman"></div>
+      <div class="woodmark wow fadeInUp" data-wow-duration="450ms" data-wow-delay="1750ms">
+        Share:
+        <ul class="social-links">
+          <li><a href="#" class="btn-social btn-facebook"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#" class="btn-social btn-twitter"><i class="fa fa-twitter"></i></a></li>
+        </ul>
       </div>
 
       <div class="container section-content">
         <span class="logo wow zoomIn">Mirum Santa's Carrier</span>
 
         <div class="narrow-container">
-          <h1>Jadikan Natal tahun ini lebih indah dengan berbagi!</h1>
+          <h1 class="wow fadeInUp" data-wow-delay="500ms">Jadikan Natal tahun ini lebih indah dengan berbagi!</h1>
           
-          <p>Saatnya mengubah barang-barangmu yang sudah tidak terpakai menjadi hadiah spesial. Mirum Santa’s Carrier akan menugaskan beberapa Peri untuk menjemput dan mengantarkan hadiahmu langsung kepada anak-anak yatim piatu.</p>
+          <p class="wow fadeInUp" data-wow-delay="750ms">Saatnya mengubah barang-barangmu yang sudah tidak terpakai menjadi hadiah spesial. Mirum Santa’s Carrier akan menugaskan beberapa Peri untuk menjemput dan mengantarkan hadiahmu langsung kepada anak-anak yatim piatu.</p>
 
-          <p>Apakah <a href="#">HADIAH</a>mu sudah siap? Klik tombol di bawah ini jika hadiahmu sudah siap.</p>
+          <p class="wow fadeInUp" data-wow-delay="1000ms">
+            Apakah <a href="#">HADIAH</a>mu sudah siap?<br>
+            <small>Klik tombol di bawah ini jika hadiahmu sudah siap.</small>
+          </p>
 
-          <a href="#" class="btn-svg">
+          <a href="#" class="btn-svg wow bounceIn" data-wow-duration="750ms" data-wow-delay="1500ms">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0" y="0" width="328" height="103.5" viewBox="0 0 328 103.5" xml:space="preserve" enable-background="new 0 0 328 103.5">
               <polygon points="316.1 17.2 319.6 20.5 309.1 78.1 157.4 87.9 27 74.5 21.1 68.3 " fill="#db7203"/>
               <polygon points="156.1 79.7 157.4 87.9 309.1 78.1 304.9 72 " fill="#d16c00"/>
@@ -51,48 +64,43 @@
             <span>Jemput Sekarang</span>
           </a>
         </div>
-
-
-      </div>
-      <div class="ball-area">
-        <div id="ball" class="ball"></div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-about" id="about">
       <div class="container">
         <div class="narrow-container">
-          <p><strong>SEKILAS TENTANG</strong></p>
+          <div class="plank">
+            SEKILAS TENTANG</p>
+          </div>
 
-          <p>Setiap orang pasti memiliki keinginan untuk berbagi, seperti Santa. Tapi berbagi apa? Kemana? Bagaimana? Hmm males ah merepotkan...</p>
+          <p>Setiap orang pasti memiliki keinginan untuk berbagi, seperti Santa.<br>Tapi berbagi apa? Kemana? Bagaimana? Hmm males ah merepotkan...</p>
 
-          <h2>Menjadi Santa itu ternyata mudah, loh!</h2>
+          <h2 class="alternate-color">Menjadi Santa itu ternyata mudah, loh!</h2>
 
-          <p>Cukup siapkan barang-barang tidak terpakaimu yang masih layak untuk didonasikan, kemudian kami akan menjemput & mengantarnya untukmu!</p>
+          <p>Cukup siapkan barang-barang tidak terpakaimu yang masih layak untuk didonasikan,<br>kemudian kami akan menjemput & mengantarnya untukmu!</p>
         </div>
 
         <div class="row">
           <div class="col-sm-3">
-            <span>Ini adalah cara berbagi dengan mudah, hemat, dan cepat.</span>
+            <p><img src="../assets/images/about1.png" alt="About Image 1"></p>
+            <span>Ini adalah cara berbagi dengan <strong>Mudah, Hemat, dan Cepat</strong>.</span>
           </div>
           <div class="col-sm-3">
-            <span>Mirum Santa’s Carrier menjemput & mengantar dengan batuan <strong>kurir terpercaya</strong>.</span>
+            <p><img src="../assets/images/about2.png" alt="About Image 2"></p>
+            <span>Mirum Santa’s Carrier menjemput & mengantar dengan batuan <strong>Kurir Terpercaya</strong>.</span>
           </div>
           <div class="col-sm-3">
-            <span>Peri-peri kami akan mengubah hadiahmu menjadi spesial bagi <strong>anak-anak yatim piatu di Yayasan Bina Kasih</strong>.</span>
+            <p><img src="../assets/images/about3.png" alt="About Image 3"></p>
+            <span>Peri-peri kami akan mengubah hadiahmu menjadi spesial bagi <strong>Anak-anak yatim piatu di Yayasan Bina Kasih</strong>.</span>
           </div>
           <div class="col-sm-3">
-            <span>Rasakan gembiranya berbagi melalui ucapan Natal dari anak-anak yatim piatu.</span>
+            <p><img src="../assets/images/about4.png" alt="About Image 4"></p>
+            <span>Rasakan gembiranya berbagi melalui ucapan <strong>Natal</strong> dari anak-anak yatim piatu.</span>
           </div>
         </div>
 
-        <h2 class="has-ribbon"><span>Yuk, jadi Santa sekarang!</span></h2>
-
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" width="206.8" height="26" viewBox="0 0 206.8 26" xml:space="preserve" enable-background="new 0 0 206.8 26" class="ribbon">
-  <path d="M201.8 12l5 2.3 -2.5 2.3H44.7l-18.3-2.3 -11-9 -10 7.3L7 22h7.7l2.7-5.7 -3-2.7c0 0 1.7-3 4.3 0s-1 11-1 11L5.3 26 0 14 7.3 3.7 18 0l9.3 9.3L52.7 13 201.8 12z" class="ribbon" stroke="#fff" fill="#ADBFCC" fill-opacity="0" />
-</svg>
-
-        <a href="#" class="btn">Ambil Barang Saya</a>
+        <h2 class="has-ribbon is-bottom"><span>Yuk, jadi Santa sekarang!</span></h2>
       </div>
     </section>
 

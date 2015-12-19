@@ -1,0 +1,8 @@
+.logo {
+  background: url('../images/logo.png') no-repeat top left;
+  width: 274px;
+  height: 184px;
+  display: inline-block;
+  @include text-hide();
+  margin-bottom: 0;
+}

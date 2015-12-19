@@ -1,0 +1,8 @@
+.social-links {
+  @include list-unstyled();
+  
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}

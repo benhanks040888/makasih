@@ -1,3 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" width="206.8" height="26" viewBox="0 0 206.8 26" xml:space="preserve" enable-background="new 0 0 206.8 26" class="ribbon">
-  <path d="M201.8 12l5 2.3 -2.5 2.3H44.7l-18.3-2.3 -11-9 -10 7.3L7 22h7.7l2.7-5.7 -3-2.7c0 0 1.7-3 4.3 0s-1 11-1 11L5.3 26 0 14 7.3 3.7 18 0l9.3 9.3L52.7 13 201.8 12z" stroke="#000" fill="#ADBFCC"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" width="206.8" height="26" viewBox="0 0 206.8 26" xml:space="preserve" enable-background="new 0 0 206.8 26">
+  <defs>
+    <filter id="dShadow" x="0" y="0">
+      <feOffset result="offOut" in="SourceAlpha" dx="0" dy="1" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="3" />
+      <feColorMatrix in="the-shadow" result="color-out" type="matrix"
+      values="0 0 0 0   0
+              0 0 0 0   0 
+              0 0 0 0   0 
+              0 0 0 .5 0"/>
+      <feBlend in="SourceGraphic" in2="color-out" mode="normal"/>
+    </filter>
+  </defs>
+  <style>
+    /* <![CDATA[ */
+    .cane {
+      text-shadow: 0 2px 4px rgba(#603b00, .5);
+    }
+    /* ]]> */
+  </style>
+
+  <path d="M201.8 12l5 2.3 -2.5 2.3H44.7l-18.3-2.3 -11-9 -10 7.3L7 22h7.7l2.7-5.7 -3-2.7c0 0 1.7-3 4.3 0s-1 11-1 11L5.3 26 0 14 7.3 3.7 18 0l9.3 9.3L52.7 13 201.8 12z" class="cane" fill="#fff" filter="url(#dShadow)"/>
 </svg>

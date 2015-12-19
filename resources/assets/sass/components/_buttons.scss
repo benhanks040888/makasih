@@ -62,3 +62,43 @@
     }
   }
 }
+
+
+.btn-social {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: rem(20);
+  border-radius: 50%;
+  transition: all ease .3s;
+  
+  &:hover,
+  &:active {
+    color: #fff;
+    box-shadow: none;
+    transform: translateY(4px);
+  }
+
+  > i {
+    text-shadow: 0 2px rgba(#3a5898, .5);
+  }
+}
+
+.btn-facebook {
+  background: #3a5898;
+  box-shadow: 0 1px 0 #1e3361,
+              0 2px 0 #1e3361,
+              0 3px 0 #1e3361,
+              0 4px 0 #1e3361;
+}
+
+.btn-twitter {
+  background: #00aced;
+  box-shadow: 0 1px 0 #008bbf,
+              0 2px 0 #008bbf,
+              0 3px 0 #008bbf,
+              0 4px 0 #008bbf;
+}

@@ -3,6 +3,10 @@
 }
 
 .section-main {
+  background-image: url('../images/bg.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   text-align: center;
   padding-bottom: 150px;
@@ -12,18 +16,72 @@
   }
 }
 
-.logo {
-  background: url('../images/logo.png') no-repeat top left;
-  width: 274px;
-  height: 184px;
-  display: inline-block;
-  @include text-hide();
-  margin-bottom: 0;
+.woodmark {
+  background: url('../images/woodmark.png') top center no-repeat;
+  width: 278px;
+  height: 156px;
+  text-align: center;
+  padding: 20px 50px;
+  color: $darkgray;
+  display: none;
+
+  @include mq(sm) {
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    right: 120px;
+    z-index: 11;
+  }
 }
 
-.section {
-  padding-top: 40px;
-  padding-bottom: 40px;
+.section-about {
+  background-image: url('../images/room-bg-small.jpg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-bottom: 120px;
+
+  @include mq(sm) {
+    background-image: url('../images/room-bg.jpg');
+    background-repeat: repeat;
+  }
+  
+  .is-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    line-height: 90px;
+
+    @include mq(sm) {
+      font-size: rem(36);
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(#603b00, .5);
+    }
+  }
+}
+
+.plank {
+  text-transform: uppercase;
+  color: #fff;
+  font-family: $kgred;
+  text-shadow: 0 2px 0 #5e2a00;
+  background: url('../images/plank-small.png') top center no-repeat;
+  max-width: 100%;
+  height: 53px;
+  font-size: rem(18);
+  line-height: 44px;
+  margin-bottom: 20px;
+
+  @include mq(sm) {
+    background: url('../images/plank.png') top center no-repeat;
+    height: 104px;
+    font-size: rem(30);
+    line-height: 85px;
+  }
 }
 
 .narrow-container {
@@ -31,118 +89,40 @@
   margin: 0 auto;
 }
 
-.section-content {
-  position: relative;
-  z-index: 10;
-}
+@include mq(sm) {
+  .has-ribbon {
+    span {
+      position: relative;
+      
+      &:before,
+      &:after {
+        content: '';
+        background: url('../images/ribbon.svg') no-repeat;
+        width: 100px;
+        height: 15px;
+        display: inline-block;
+        background-size: cover;
+        position: absolute;
+        top: 50%;
+        margin-top: -8px;
+      }
 
-.has-ribbon {
-  span {
-    position: relative;
+      &:before {
+        left: -120px;
+      }
 
-    &:before {
-      content: '';
-      background: url('../images/ribbon.svg') no-repeat;
-      width: 100px;
-      height: 15px;
-      display: inline-block;
-      background-size: cover;
-      position: absolute;
-      top: 5px;
-      left: -100px;
-    }
-
-    &:after {
-      content: '';
-      background: url('../images/ribbon.svg') no-repeat;
-      width: 100px;
-      height: 15px;
-      display: inline-block;
-      background-size: cover;
-      position: absolute;
-      top: 5px;
-      right: -100px;
-      transform: scaleX(-1);
+      &:after {
+        right: -120px;
+        transform: scaleX(-1);
+      }
     }
   }
 }
 
-.ribbon.filled {
-  path {
-    transition: all ease .3s;
-    stroke-opacity: 0;
-    fill-opacity: 1;
-  }
-}
-
-.cloud1,
-.cloud2,
-.cloud3,
-.cloud4 {
-  position: absolute;
-  animation: cloudMove 59s linear infinite;
-}
-
-.cloud3,
-.cloud4 {
-  animation-name: cloudRightMove;
-}
-
-.cloud1 {
-  top: 50px;
-  left: 34px;
-}
-
-.cloud2 {
-  top: 78px;
-  left: 224px;
-  animation-duration: 55s;
-}
-
-.cloud3 {
-  top: 60px;
-  right: 253px;
-  animation-duration: 52s;
-}
-
-.cloud4 {
-  top: 32px;
-  right: -83px;
-  animation-duration: 48s;
-}
-
-@keyframes cloudMove {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(1500px);
-  }
-
-  50.1% {
-    transform: translateX(-500px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes cloudRightMove {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(1500px);
-  }
-
-  50.1% {
-    transform: translateX(-2500px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
+// .ribbon.filled {
+//   path {
+//     transition: all ease .3s;
+//     stroke-opacity: 0;
+//     fill-opacity: 1;
+//   }
+// }

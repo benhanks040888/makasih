@@ -3,6 +3,9 @@ nav {
   position: relative;
   text-align: center;
   margin: 0 auto 30px;
+  font-family: $kgred;
+  font-weight: 400;
+  font-size: rem(14);
   
   &:before {
     content: '';
