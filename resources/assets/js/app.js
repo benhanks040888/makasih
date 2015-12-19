@@ -4,7 +4,7 @@ $(function() {
   // fake preloader
   setTimeout(function() {
     $('.loader').addClass('out');
-  }, 1000);
+  }, 1900);
 
   new WOW().init();
 

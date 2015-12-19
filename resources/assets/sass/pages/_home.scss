@@ -10,6 +10,7 @@
   position: relative;
   text-align: center;
   padding-bottom: 150px;
+  overflow: hidden;
   
   @include mq(sm) {
     height: 100vh;
@@ -31,6 +32,30 @@
     bottom: -15px;
     right: 120px;
     z-index: 11;
+  }
+}
+
+.santa {
+  @include mq(sm) {
+    background: url('../images/santa.png') bottom center no-repeat;
+    width: 246px;
+    height: 320px;
+    position: absolute;
+    bottom: -15px;
+    left: 50px;
+    background-size: 70%;
+  }
+}
+
+.deer {
+  @include mq(sm) {
+    background: url('../images/deer.png') bottom center no-repeat;
+    width: 94px;
+    height: 177px;
+    position: absolute;
+    bottom: -7px;
+    left: 220px;
+    background-size: 70%;
   }
 }
 
@@ -126,3 +151,27 @@
 //     fill-opacity: 1;
 //   }
 // }
+
+
+.gift-modal {
+  background: url('../images/scroll-medium.png') top center no-repeat;
+  position: absolute;
+  
+  h2 {
+    color: $red;
+    font-size: rem(24);
+    font-family: $kgred;
+  }
+
+  h3 {
+    font-size: rem(22);
+  }
+  
+  @include mq(lg) {
+    background-image: url('../images/scroll.png');
+  }
+}
+
+.gift-list {
+  color: #603913;
+}
