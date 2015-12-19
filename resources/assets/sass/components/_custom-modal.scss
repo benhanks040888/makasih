@@ -1,0 +1,26 @@
+.remodal {
+  background: url('../images/room-bg-small.jpg') top center repeat;
+
+  h2 {
+    color: $red;
+    font-size: rem(24);
+    font-family: $kgred;
+  }
+
+  h3 {
+    font-size: rem(22);
+  }
+
+  @include mq(md) {
+    background-repeat: no-repeat;
+  }
+  
+  @include mq(lg) {
+    background-image: url('../images/scroll.png');
+    width: 1040px;
+    height: 376px;
+    max-width: none;
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+}

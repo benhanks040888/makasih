@@ -153,25 +153,25 @@
 // }
 
 
-.gift-modal {
-  background: url('../images/scroll-medium.png') top center no-repeat;
-  position: absolute;
-  
-  h2 {
-    color: $red;
-    font-size: rem(24);
-    font-family: $kgred;
-  }
-
-  h3 {
-    font-size: rem(22);
-  }
-  
-  @include mq(lg) {
-    background-image: url('../images/scroll.png');
-  }
-}
-
 .gift-list {
   color: #603913;
+}
+
+.gift-image {
+  position: relative;
+
+  &.gift-nope,
+  &.gift-yep {
+    &:after {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &.gift-nope {
+    &:after {
+      background: url('../images/gift-nope.png') top left no-repeat;
+    }
+  }
 }
