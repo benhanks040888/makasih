@@ -19,6 +19,7 @@ $link-color-hover: lighten($link-color, 10%);
 @import "base";
 
 @import "components/social";
+@import "components/form";
 @import "components/sections";
 @import "components/header";
 @import "components/loader";
