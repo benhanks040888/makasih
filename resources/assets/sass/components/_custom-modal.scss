@@ -1,26 +1,77 @@
 .remodal {
   background: url('../images/room-bg-small.jpg') top center repeat;
+  
+  h2,
+  h3 {
+    margin: 0;
+  }
 
   h2 {
     color: $red;
     font-size: rem(24);
     font-family: $kgred;
+    text-transform: uppercase;
   }
 
   h3 {
     font-size: rem(22);
   }
 
-  @include mq(md) {
-    background-repeat: no-repeat;
-  }
-  
   @include mq(lg) {
+    background-repeat: no-repeat;
     background-image: url('../images/scroll.png');
     width: 1040px;
     height: 376px;
     max-width: none;
     padding-left: 160px;
     padding-right: 160px;
+    padding-top: 30px;
   }
+}
+
+.remodal-close {
+  @include mq(lg) {
+    left: auto;
+    right: 120px;
+    top: 30px;
+    color: $darkblue;
+    
+    &:before {
+      font-size: rem(32);
+    }
+  }
+}
+
+.gift-list {
+  color: #603913;
+  margin-top: 30px;
+}
+
+.gift-image {
+  position: relative;
+  animation: tada 1s ease .5s;
+}
+
+.gift-yep,
+.gift-nope {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+}
+
+.gift-yep:before {
+  background: url('../images/gift-yep.png') no-repeat;
+  width: 49px;
+  height: 37px;
+}
+
+.gift-nope:before {
+  background: url('../images/gift-nope.png') no-repeat;
+  width: 40px;
+  height: 42px;
 }
