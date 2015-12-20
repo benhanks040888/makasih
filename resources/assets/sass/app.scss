@@ -11,13 +11,6 @@ $headings-font-family: $dancing-script;
 $text-color: $darkblue;
 $link-color: $red;
 $link-color-hover: lighten($link-color, 10%);
-// Breakpoints
-$mq-breakpoints: (
-  xs: 480px,
-  sm: 769px,
-  md: 900px,
-  lg: 900px
-) !default;
 
 @import "vendors/baseguide";
 

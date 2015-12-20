@@ -4,6 +4,12 @@ body {
   background-color: $skyblue;
 }
 
+@include mq(lg) {
+  .container {
+    max-width: 900px;
+  }
+}
+
 footer {
   padding: 20px;
   background: $darkblue;

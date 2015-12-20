@@ -18,20 +18,35 @@
 }
 
 .woodmark {
-  background: url('../images/woodmark.png') top center no-repeat;
-  width: 278px;
-  height: 156px;
-  text-align: center;
-  padding: 20px 50px;
-  color: $darkgray;
-  display: none;
-
   @include mq(sm) {
+    background: url('../images/woodmark.png') top center no-repeat;
+    width: 234px;
+    height: 156px;
+    text-align: center;
+    padding: 20px 50px;
+    color: $darkgray;
     display: block;
     position: absolute;
     bottom: -15px;
     right: 120px;
     z-index: 11;
+  }
+}
+
+.snowman {
+  @include mq(sm) {
+    background: url('../images/snowman.png') bottom center no-repeat;
+    width: 226px;
+    height: 281px;
+    position: absolute;
+    bottom: -10px;
+    right: -20px;
+    background-size: 70%;
+  }
+
+  @include mq(lg) {
+    background-size: 100%;
+    right: 0;
   }
 }
 
@@ -45,6 +60,10 @@
     left: 50px;
     background-size: 70%;
   }
+
+  @include mq(lg) {
+    background-size: 100%;
+  }
 }
 
 .deer {
@@ -57,7 +76,14 @@
     left: 220px;
     background-size: 70%;
   }
+
+  @include mq(lg) {
+    background-size: 100%;
+    left: 240px;
+  }
 }
+
+
 
 .section-about {
   background-image: url('../images/room-bg-small.jpg');
