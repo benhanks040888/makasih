@@ -9,14 +9,14 @@ var outputDir = 'public/assets/',
     cssDir = outputDir + 'css/';
 
 elixir(function(mix) {
-  mix.task('jade', 'public/html/jade/**/*.jade');
+  // mix.task('jade', 'public/html/jade/**/*.jade');
 
   mix
-    .browserSync({
-      open: false,
-      files: [cssDir + '**/*.css', 'public/html/**/*.html'],
-      proxy: 'http://makasih.dev',
-    })
+    // .browserSync({
+    //   open: false,
+    //   files: [cssDir + '**/*.css', 'public/html/**/*.html'],
+    //   proxy: 'http://makasih.dev',
+    // })
     .sass('app.scss', cssDir)
     .scripts(['plugins.js', 'app.js'], jsDir + 'app.js');
 });
