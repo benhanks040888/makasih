@@ -99,6 +99,7 @@
   background-size: cover;
   position: relative;
   padding-bottom: 120px;
+  text-align: center;
 
   @include mq(sm) {
     background-image: url('../images/room-bg.jpg');

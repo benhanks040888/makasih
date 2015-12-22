@@ -16,7 +16,7 @@
     </div>
 
     <div class="container section-content">
-      <a href="{{ url('/') }}"><span class="logo wow zoomIn" data-wow-delay="200ms">Mirum Santa's Carrier</span></a>
+      <a href="{{ route('home') }}"><span class="logo wow zoomIn" data-wow-delay="200ms">Mirum Santa's Carrier</span></a>
 
       <div class="narrow-container">
         <h1 class="wow fadeInUp" data-wow-delay="500ms">Jadikan Natal tahun ini lebih indah dengan berbagi!</h1>
@@ -52,7 +52,7 @@
   </section>
 
   <section class="section section-about" id="about">
-    <div class="container">
+    <div class="container section-content">
       <div class="narrow-container">
         <div class="plank wow zoomIn">
           SEKILAS TENTANG</p>
@@ -84,7 +84,7 @@
         </div>
       </div>
 
-      <h2 class="has-ribbon is-bottom wow fadeIn" data-wow-delay="500ms"><span>Yuk, jadi Santa sekarang!</span></h2>
     </div>
+    <h2 class="has-ribbon is-bottom wow fadeIn" data-wow-delay="500ms"><span>Yuk, jadi Santa sekarang!</span></h2>
   </section>
 @stop

@@ -11,21 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('site.home');
-});
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@getIndex']);
+Route::get('upload', ['as' => 'upload', 'uses' => 'HomeController@getUpload']);
+Route::post('upload', ['as' => 'process.upload', 'uses' => 'HomeController@uploadFiles']);
 
-Route::get('upload', array('as' => 'upload'), function() {
-  return view('site.upload');
-});
+Route::get('submit', ['as' => 'submit', 'uses' => 'HomeController@getSubmit']);
+Route::post('submit', ['as' => 'process.submit', 'uses' => 'HomeController@postSubmit']);
 
+Route::get('thankyou', ['as' => 'thankyou', 'uses' => 'HomeController@getThankyou']);
 
-Route::get('home', 'HomeController@index');
-Route::post('home/uploadFiles', 'HomeController@uploadFiles');
+Route::get('home/session-reset', 'HomeController@sessionReset');
 Route::get('home/session-{filename}', 'HomeController@removeFile');
 Route::get('home/session', 'HomeController@session');
-Route::get('home/session-reset', 'HomeController@sessionReset');
-
-Route::get('/logout', 'Auth\AuthController@getLogout');
-Route::get('/login', 'Auth\AuthController@getLogin');
-Route::post('/login', 'Auth\AuthController@postLogin');

@@ -27,7 +27,9 @@
     <meta name="msapplication-TileImage" content="{{ assets_url('images/favicons/mstile-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
   </head>
-  <body class="home">
+  <body>
+    <canvas id="snow"></canvas>
+
     @include('_partials.loader')
     @include('_partials.prize-modal')
 
@@ -38,5 +40,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ str_replace('/', '\/', assets_url('js/vendors/jquery-1.11.0.min.js')) }}"><\/script>')</script>
     <script src="{{ assets_url('js/app.js') }}"></script>
+
+    @yield('scripts')
   </body>
 </html>
