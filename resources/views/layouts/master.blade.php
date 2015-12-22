@@ -26,6 +26,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ assets_url('images/favicons/mstile-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
+    <base href="{{ secure_url(route('home')) }}" />
   </head>
   <body>
     <canvas id="snow"></canvas>

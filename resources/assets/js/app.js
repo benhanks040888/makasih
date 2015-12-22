@@ -1,3 +1,25 @@
+var isPushEnabled = false;
+
+window.addEventListener('load', function() {
+  // subscribe();
+
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(function(reg) {
+        console.log(':^)', reg);
+        navigator.serviceWorker.ready.then(function(reg) {  
+          reg.pushManager.subscribe({
+            userVisibleOnly: true
+          }).then(function(sub) {
+            console.log('endpoint:', sub.endpoint);
+          });
+        });
+      });
+  } else {
+    console.warn('Service workers are not supported in this browser');
+  }
+});
+
 /**
  * Behaves the same as setInterval except uses requestAnimationFrame() where possible for better performance
  * @param {function} fn The callback function

@@ -47,7 +47,7 @@ if ( ! function_exists('assets_url'))
    */
   function assets_url($asset)
   {
-    return asset('assets/' . ltrim($asset, '/'));
+    return secure_asset('assets/' . ltrim($asset, '/'));
   }
 }
 
