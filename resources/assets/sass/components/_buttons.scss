@@ -21,7 +21,12 @@
     transition: all ease .3s;
   }
 
+  .shadow {
+    fill: #c71828;
+  }
+
   .surface {
+    fill: #e51920;
     transition: all ease .3s; 
   }
 
@@ -51,7 +56,7 @@
     text-decoration: none;
     
     .surface {
-      fill: lighten(#db7203, 5%);
+      fill: lighten(#e51920, 5%);
     }
     
     .stars-left,
