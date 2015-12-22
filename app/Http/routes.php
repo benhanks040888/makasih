@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('site.home');
+});
+
+Route::get('upload', array('as' => 'upload'), function() {
+  return view('site.upload');
 });
 
 Route::get('/logout', 'Auth\AuthController@getLogout');
