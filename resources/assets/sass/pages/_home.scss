@@ -12,6 +12,12 @@
   padding-bottom: 150px;
   overflow: hidden;
   
+  &.section-thankyou {
+    padding-bottom: 0;
+  }
+}
+
+.section-main-home {
   @include mq(sm) {
     height: 100vh;
   }
@@ -59,6 +65,7 @@
     bottom: -15px;
     left: 50px;
     background-size: 70%;
+    z-index: 11;
   }
 
   @include mq(lg) {
@@ -146,6 +153,23 @@
       span:before,
       span:after {
         background-image: url('../images/red-cane.png');
+        width: 86px;
+        height: 18px;
+      }
+
+      span:before {
+        left: -100px;
+      }
+
+      span:after {
+        right: -100px;
+      }
+    }
+
+    &.ribbon-blue {
+      span:before,
+      span:after {
+        background-image: url('../images/blue-cane.png');
         width: 86px;
         height: 18px;
       }

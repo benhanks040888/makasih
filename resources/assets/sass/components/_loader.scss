@@ -7,7 +7,7 @@
   z-index: 99;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: #c5f3fb;
   opacity: 1;
   transition: opacity ease 1s;
   
@@ -24,8 +24,8 @@
 
 .spinner {
   margin: 0 auto;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   position: relative;
   transition: opacity ease .4s;
   background: url('../images/santa-run.gif') no-repeat;

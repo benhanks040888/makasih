@@ -11,6 +11,20 @@ $headings-font-family: $dancing-script;
 $text-color: $darkblue;
 $link-color: $red;
 $link-color-hover: lighten($link-color, 10%);
+$placeholder-color: $brown;
+$input-selector: (
+  'input[type="email"]',
+  'input[type="date"]',
+  'input[type="time"]',
+  'input[type="number"]',
+  'input[type="password"]',
+  'input[type="search"]',
+  'input[type="tel"]',
+  'input[type="text"]',
+  'input[type="url"]',
+  'textarea',
+  'select'
+);
 
 @import "vendors/baseguide";
 
@@ -19,7 +33,6 @@ $link-color-hover: lighten($link-color, 10%);
 @import "base";
 
 @import "components/social";
-@import "components/form";
 @import "components/sections";
 @import "components/header";
 @import "components/loader";
@@ -28,10 +41,13 @@ $link-color-hover: lighten($link-color, 10%);
 @import "components/animation";
 @import "components/remodal";
 @import "components/custom-modal";
+@import "components/dropzone";
+@import "components/custom-dropzone";
+@import "components/form";
 
 @import "pages/home";
+@import "pages/thankyou";
 
-// @import "components/dropzone";
 
 .ball-area {
   max-width: 300px;

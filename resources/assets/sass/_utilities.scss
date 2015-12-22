@@ -11,3 +11,11 @@
 @function rem($value) {
   @return to-rem($value);
 }
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.mb15 {
+  margin-bottom: 15px;
+}

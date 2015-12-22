@@ -1,0 +1,27 @@
+.section-thankyou {
+  padding-bottom: 0;
+}
+
+.thankyou-container {
+  background: url(../images/room-bg-small.jpg) top center;
+  padding: 20px;
+  margin: 0 20px 20px;
+  box-shadow: 0 30px 30px -25px rgba(0,0,0,0.4);
+
+  @media (min-width: 800px) {
+    background-image: url('../images/mail-bg-medium.png');
+    width: 800px;
+    height: 545px;
+    padding: 50px;
+    margin: 0 auto 20px;
+    box-shadow: none;
+  }
+
+  @include mq(lg) {
+    background: url('../images/thankyou-bg.png') no-repeat top center;
+    width: 1100px;
+    height: 483px;
+    margin: 20px auto 0;
+    padding: 50px 300px;
+  }
+}

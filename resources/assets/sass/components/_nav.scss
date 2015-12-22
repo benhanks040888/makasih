@@ -15,8 +15,11 @@ nav {
     top: -45px;
     left: 0;
     z-index: 9;
-    border-radius: 100%;
     background: rgba(255, 255, 255, .4);
+    
+    @include mq(sm) {
+      border-radius: 100%;
+    }
   }
 
   &.jelly {

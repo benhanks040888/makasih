@@ -1,12 +1,18 @@
+$(window).load(function() {
+  $('.loader').addClass('out');
+
+  new WOW().init();
+});
+
 $(function() {
   FastClick.attach(document.body);
 
   // fake preloader
-  setTimeout(function() {
-    $('.loader').addClass('out');
-  }, 500);
+  // setTimeout(function() {
+  //   $('.loader').addClass('out');
+  // }, 500);
 
-  new WOW().init();
+  // new WOW().init();
 
   $('nav > a').on('click', function(e) {
     e.preventDefault();
